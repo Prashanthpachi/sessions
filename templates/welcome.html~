@@ -1,0 +1,36 @@
+<html>
+<head>
+</head>
+<body>
+Welcome to my project
+
+{% if login == "False" %}
+<form action="/login" method="POST">
+  <input type="username" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Log in">
+</form>
+
+<form action = "/signup" method = "POST">
+<input type = "firstname" name = "firstname" value = "Enter your first name">
+<input type = "lastname" name = "lastname" value = "Enter your last name">
+<input type = "email" name = "email" value = "Enter your email">
+<input type = "password" name = "password" value = "Create your password">
+<input type = "submit" value = "sign up">
+
+{% else %}
+
+Here is a list of pages you can go to, {{ session["username"]["firstname"] }}
+
+<br>
+Here are your user details you entered: <br>
+{{ session["username"]["firstname"] }} <br>
+{{ session["username"]["lastname"] }} <br>
+{{ session["username"]["email"] }} <br>
+{{ session["username"]["password"] }} <br>
+"<b><a href = '/logout'>click here to log out</a></b>"
+  
+{% endif %}
+</body>
+</html>
+
