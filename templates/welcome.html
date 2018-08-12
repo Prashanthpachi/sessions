@@ -12,22 +12,19 @@ Welcome to my project
 </form>
 
 <form action = "/signup" method = "POST">
-<input type = "firstname" name = "firstname" value = "Enter your first name">
-<input type = "lastname" name = "lastname" value = "Enter your last name">
+<input type = "username" name = "username" value = "Enter your username">
+<input type = "name" name = "name" value = "Enter your name">
 <input type = "email" name = "email" value = "Enter your email">
 <input type = "password" name = "password" value = "Create your password">
 <input type = "submit" value = "sign up">
 
 {% else %}
 
-Here is a list of pages you can go to, {{ session["username"]["firstname"] }}
+Here is a list of pages you can go to, {{ session["user_id"] }}
 
 <br>
-Here are your user details you entered: <br>
-{{ session["username"]["firstname"] }} <br>
-{{ session["username"]["lastname"] }} <br>
-{{ session["username"]["email"] }} <br>
-{{ session["username"]["password"] }} <br>
+Here are the pages you can go to: <br>
+<a href = "/products">All Products</a><br>
 "<b><a href = '/logout'>click here to log out</a></b>"
   
 {% endif %}
