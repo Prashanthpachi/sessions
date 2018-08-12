@@ -22,6 +22,7 @@ def login():
 	elif(request.form["password"] == existing_user["password"]):
 		print("login successful. Redirecting to products page")
 		session['user_id'] = str(existing_user['_id'])
+		session['accounttype'] = str(existing_user['accounttype'])
 		return redirect(url_for('index'))
 
 	else:
@@ -34,6 +35,7 @@ def signup():
 	user_info["name"] = request.form["name"]
 	user_info["email"] = request.form["email"]
 	user_info["password"] = request.form["password"]
+	user_info["accounttype"] = request.form["accounttype"]	
 	#import pdb; pdb.set_trace()
 	results = user_signup(user_info)
 	if(results is True):
@@ -44,6 +46,10 @@ def signup():
 @app.route("/products")
 def product_page():
 	return render_template('products.html')
+
+@app.route("/Add_products")
+def Add_product_page():
+	return render_template('Add_products.html')
 
 @app.route('/logout')
 def logout():

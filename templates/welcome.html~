@@ -17,16 +17,22 @@ Welcome to my project
 <input type = "email" name = "email" value = "Enter your email">
 <input type = "password" name = "password" value = "Create your password">
 <input type = "submit" value = "sign up">
-
+<br>
+<input type = "radio" name = "accounttype" value ="seller">seller
+</br>
+<input type = "radio" name = "accounttype" value ="buyer">buyer<br>
 {% else %}
 
 Here is a list of pages you can go to, {{ session["user_id"] }}
-
-<br>
-Here are the pages you can go to: <br>
-<a href = "/products">All Products</a><br>
+{% if (session["accounttype"] == "seller") %}
+	<a href = "/Add_products">Add products</a><br>	
+	
+{% else %}
+	<br>
+	Here are the pages you can go to: <br>
+	<a href = "/products">All Products</a><br>
+{% endif %}	
 "<b><a href = '/logout'>click here to log out</a></b>"
-  
 {% endif %}
 </body>
 </html>

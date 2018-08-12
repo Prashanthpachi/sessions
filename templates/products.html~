@@ -1,0 +1,14 @@
+<html>
+<head>
+</head>
+<body>
+Welcome to your Products page user : {{username}}
+<ol>
+	<li>Smartphones</li>
+	<li>TV</li>
+	<li>Fashion</li>
+	<li>Applications</li>
+</ol>
+</body>
+</html>
+
