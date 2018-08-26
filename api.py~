@@ -86,16 +86,6 @@ def cart_page():
     print(cart)
     return render_template("cart_page.html",cart=cart)
 
-@app.route("/searchproducts", methods=["POST"])
-def search_products():
-	word = request.form["search"]
-	search = search_products_in_page(word)
-	if search is None:
-		return "No products found"
-
-	else:
-		return render_template("searchproducts.html",search=search)
-
 @app.route('/logout')
 def logout():
    session.pop('user_id', None)

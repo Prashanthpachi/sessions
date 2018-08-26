@@ -1,0 +1,21 @@
+<html>
+<head>
+</head>
+<body>
+Welcome to my project
+
+{% if login == "False" %}
+<form action="/login" method="POST">
+  <input type="username" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Log in">
+</form>
+
+{% else %}
+
+Here is a list of pages you can go to, {{ session["username"] }}
+
+{% endif %}
+</body>
+</html>
+
