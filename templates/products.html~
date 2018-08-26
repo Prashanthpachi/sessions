@@ -3,9 +3,9 @@
 </head>
 <body>
 {% if session['accounttype'] == "buyer" %}
-<form action = "searchproducts" methods = "POST">
-	<p>search <input type = "text" name = "search" placeholder = "Enter Keywords Here..."></p>
-	<p><input type = "submit" name = "search" value = "search"></p>
+<form action = "/searchproducts" method = "POST">
+	<p>search <input type="text" name="search" placeholder="En1ter Keywords Here..."></p>
+	<p><input type="submit" value="search"></p>
 </form>
 {% endif %}
 {% for dict in result %}

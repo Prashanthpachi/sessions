@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, redirect, url_for , session
-from models.user_model import user_signup , search_user_by_username, Product_addition , check_user , seller_products , buyer_products, search_user_by_user_id, cart_details, update_cart_details
+from models.user_model import user_signup , search_user_by_username, Product_addition , check_user , seller_products , buyer_products, search_user_by_user_id, cart_details, update_cart_details, search_products_in_page
 
 app = Flask(__name__)
 app.secret_key = 'any random string'
